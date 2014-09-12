@@ -15,8 +15,11 @@ remixAtOnce.setup = remixAtOnce.setup || {
     findAndInitAudioStreams: function() {
         console.log("findAndInitAudioStreams STIB");
         var audioElements = document.querySelectorAll('audio');
+        var videoElements = document.querySelectorAll('video');
         console.log(audioElements);
+        console.log(videoElements);
         remixAtOnce.audioElements = audioElements;
+        remixAtOnce.videoElements = videoElements;
     }
 };
 

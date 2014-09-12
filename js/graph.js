@@ -14,12 +14,23 @@ remixAtOnce.graph = remixAtOnce.graph || {
 
             console.log(remixAtOnce.audioElements);
             // remixAtOnce.audioElements.forEach( function(element){
+            // 
+            if (remixAtOnce.audioElements.length > 1) {
                 audioNodes.push(remixAtOnce.context.createMediaElementSource(remixAtOnce.audioElements[0]));
                 audioNodes.push(remixAtOnce.context.createMediaElementSource(remixAtOnce.audioElements[1]));
-            // });
+            } else if (remixAtOnce.audioElements.length > 0) {
+                audioNodes.push(remixAtOnce.context.createMediaElementSource(remixAtOnce.audioElements[0]));
+                // audioNodes.push(remixAtOnce.context.createMediaElementSource(remixAtOnce.audioElements[0]));
+            } else if (remixAtOnce.audioElements.length === 0 && remixAtOnce.videoElements.length > 0) {
+                audioNodes.push(remixAtOnce.context.createMediaElementSource(remixAtOnce.videoElements[0]));
+                // audioNodes.push(remixAtOnce.context.createMediaElementSource(remixAtOnce.videoElements[0]));
+            }
 
+            // });
+            // 
+            
             audioNodes[0].connect(filterNodeLeftSection);
-            audioNodes[1].connect(filterNodeRightSection);
+            if (audioNodes.length > 1) audioNodes[1].connect(filterNodeRightSection);
             // console.log(audioNodes[0]);
             // oscillator.connect(gain);
             // oscillator.frequency.value = 150;
