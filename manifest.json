@@ -1,14 +1,21 @@
 {
-  "manifest_version": 2,
+    "manifest_version": 2,
 
-  "name": "remix-at-once",
-  "description": "This extension lets you remix audio in the web on the fly.",
-  "version": "0.1",
+    "name": "remix-at-once",
+    "description": "This extension lets you remix audio in the web on the fly.",
+    "version": "0.1",
 
-  "permissions": [],
-  
-  "browser_action": {
+    "permissions": [],
+
+    "content_scripts": [
+        {
+          "matches": ["http://*/*"],
+          "js": ["js/setup.js", "js/graph.js", "js/communication.js", "js/index.js"]
+        }
+    ],
+
+    "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "controls.html"
-  }
+    }
 }

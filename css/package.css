@@ -1,0 +1,39 @@
+body {
+  width: 500px;
+  height: 400px;
+  font-family: Arial; }
+
+#right-section,
+#left-section {
+  width: 250px;
+  height: 300px;
+  position: absolute;
+  top: 100px;
+  margin-top: 10px;
+  padding: 20px; }
+
+#right-section {
+  left: 250px;
+  background-color: grey; }
+
+#left-section {
+  left: 0px;
+  background-color: darkgrey; }
+
+#crossfader {
+  width: 300px;
+  margin-left: 100px; }
+
+#left-section #filter-cutoff-left-section {
+  position: absolute;
+  width: 230px;
+  left: 10px;
+  top: 40px; }
+
+#right-section #filter-cutoff-right-section {
+  position: absolute;
+  width: 230px;
+  left: 10px;
+  top: 40px; }
+
+/*# sourceMappingURL=package.css.map */
